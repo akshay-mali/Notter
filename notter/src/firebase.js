@@ -12,16 +12,3 @@ const app = firebase.initializeApp({
 
   export const auth = app.auth();
   export default app;
-
-
-  // // Your web app's Firebase configuration
-  // var firebaseConfig = {
-  //   apiKey: "AIzaSyBPtxivFvFpcdELWnuDVTwwwvyfm0xxxEM",
-  //   authDomain: "notter-126fe.firebaseapp.com",
-  //   projectId: "notter-126fe",
-  //   storageBucket: "notter-126fe.appspot.com",
-  //   messagingSenderId: "821151179526",
-  //   appId: "1:821151179526:web:e51c5bb7d35c142b997487"
-  // };
-  // // Initialize Firebase
-  // firebase.initializeApp(firebaseConfig);

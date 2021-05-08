@@ -16,33 +16,34 @@ function Login() {
             setLoading(true);
             setError('');
             await login(emailRef.current.value, passwordRef.current.value);
+            setLoading(false);
             history.push("/");
         }catch{
+            setLoading(false);
             setError("Failed to sign in.");
         }
 
-        setLoading(false);
     }
 
     return (
-        <div className="LoginForm">
-            <h2>Login</h2>
-            {error && <p> { error } </p>}
+        <div className="authform__container">
+            <h2 className="authform__title">Login</h2>
+            {error && <p className="authform__error"> { error } </p>}
             <form onSubmit={handleSubmit} >
-                <div className="input-field">
-                    <label>Email</label>
+                <div className="authform__input-field">
+                    <label>Email address</label>
                     <input type="email" ref={emailRef} required ></input>
                 </div>
-                <div className="input-field">
+                <div className="authform__input-field">
                     <label>Password</label>
                     <input type="password" ref={passwordRef} required ></input>
                 </div>
-                <div className="input-field">
-                    <button disabled={loading} type="Submit" >Login</button>
+                <div className="authform__forgotpass"> <Link to="/forgot-password">Forgot your Password?</Link> </div>
+                <div className="authform__input-field">
+                    <button disabled={loading} type="Submit" className="authform__btn">Login</button>
                 </div>
             </form>
-            <div> <Link to="/forgot-password">Forgot Password?</Link> </div>
-            <div>Need an account? <Link to="/signup">Signup</Link></div>
+            <div className="authform__direct">Need an account? <Link to="/signup">Signup</Link></div>
         </div>
     )
 }

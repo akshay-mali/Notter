@@ -25,21 +25,21 @@ function ForgotPassword() {
     }
 
     return (
-        <div className="LoginForm">
-            <h2>Password Reset</h2>
+        <div className="authform__container">
+            <h2 className="authform__title">Password Reset</h2>
             {message && <p> { message } </p>}
-            {error && <p> { error } </p>}
+            {error && <p className="authform__error"> { error } </p>}
             <form onSubmit={handleSubmit} >
-                <div className="input-field">
+                <div className="authform__input-field">
                     <label>Email</label>
                     <input type="email" ref={emailRef} required ></input>
                 </div>
-                <div className="input-field">
-                    <button disabled={loading} type="Submit" >Reset Password</button>
+                <div className="authform__input-field">
+                    <button disabled={loading} type="Submit" className="authform__btn">Reset Password</button>
                 </div>
             </form>
-            <div> <Link to="/login">Login</Link> </div>
-            <div>Need an account? <Link to="/signup">Signup</Link></div>
+            <div className="authform__direct">Already have an account? <Link to="/login">Login</Link> </div>
+            <div className="authform__direct">Need an account? <Link to="/signup">Signup</Link></div>
         </div>
     )
 }

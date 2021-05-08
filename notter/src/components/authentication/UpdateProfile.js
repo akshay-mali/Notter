@@ -29,37 +29,37 @@ function UpdateProfile() {
         }
 
         Promise.all(promises).then(() => {
+            setLoading(false);
             history.push("/profile");
         }).catch(() => {
-            setError("Failed to update account");
-        }).finally(() => {
             setLoading(false);
+            setError("Failed to update account");
         })
 
     }
 
     return (
-        <div className="SignupForm">
-            <h2>Update Profile</h2>
+        <div className="authform__container">
+            <h2 className="authform__title">Update Profile</h2>
             {error && <p> { error } </p>}
             <form onSubmit={handleSubmit} >
-                <div className="input-field">
+                <div className="authform__input-field">
                     <label>Email</label>
                     <input type="email" ref={emailRef} required defaultValue={currentUser.email} ></input>
                 </div>
-                <div className="input-field">
+                <div className="authform__input-field">
                     <label>Password</label>
                     <input type="password" ref={passwordRef} placeholder="Leave blank to keep the same" ></input>
                 </div>
-                <div className="input-field">
+                <div className="authform__input-field">
                     <label>ConfirmPassword</label>
                     <input type="password" ref={confirmPasswordRef} placeholder="Leave blank to keep the same" ></input>
                 </div>
-                <div className="input-field">
-                    <button disabled={loading} type="Submit" >Update</button>
+                <div className="authform__input-field">
+                    <button disabled={loading} type="Submit" className="authform__btn">Update</button>
                 </div>
             </form>
-            <div><Link to="/profile">Cancle</Link></div>
+            <div className="authform__direct"><Link to="/profile">Cancle</Link></div>
         </div>
     )
 }

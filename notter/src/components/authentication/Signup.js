@@ -22,36 +22,37 @@ function Signup() {
             setLoading(true);
             setError('');
             await signup(emailRef.current.value, passwordRef.current.value);
+            setLoading(false);
             history.push("/");
         }catch{
+            setLoading(false);
             setError("Failed to create an account");
         }
 
-        setLoading(false);
     }
 
     return (
-        <div className="SignupForm">
-            <h2>Signup</h2>
-            {error && <p> { error } </p>}
+        <div className="authform__container">
+            <h2 className="authform__title">Signup</h2>
+            {error && <p className="authform__error"> { error } </p>}
             <form onSubmit={handleSubmit} >
-                <div className="input-field">
+                <div className="authform__input-field">
                     <label>Email</label>
                     <input type="email" ref={emailRef} required ></input>
                 </div>
-                <div className="input-field">
+                <div className="authform__input-field">
                     <label>Password</label>
                     <input type="password" ref={passwordRef} required ></input>
                 </div>
-                <div className="input-field">
+                <div className="authform__input-field">
                     <label>ConfirmPassword</label>
                     <input type="password" ref={confirmPasswordRef} required ></input>
                 </div>
-                <div className="input-field">
-                    <button disabled={loading} type="Submit" >Signup</button>
+                <div className="authform__input-field">
+                    <button disabled={loading} type="Submit" className="authform__btn">Signup</button>
                 </div>
             </form>
-            <div>Already have a account? <Link to="/login">Login</Link></div>
+            <div className="authform__direct">Already have a account? <Link to="/login">Login</Link></div>
         </div>
     )
 }

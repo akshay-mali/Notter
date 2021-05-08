@@ -36,13 +36,19 @@ export function AuthProvider({ children }) {
     }
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(
-            user => {
-                setCurrentUser(user);
-                setLoading(false);
-            }
-        );
-        return unsubscribe;
+        let unsubscribe;
+        const getUser = () => {
+            unsubscribe = auth.onAuthStateChanged(
+                async user => {
+                        setLoading(false);
+                        setCurrentUser(user);
+                }
+            );
+        };
+        getUser();
+        return function cleanup() {
+            unsubscribe();
+        };
     }, []);
 
     const value = {

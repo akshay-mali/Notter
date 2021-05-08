@@ -18,13 +18,13 @@ function Profile() {
     }
 
     return (
-        <div className="Dashboard">
-            <h2>Profile</h2>
-            {error && <p> { error } </p>}
+        <div className="authform__container">
+            <h2 className="authform__title">Profile</h2>
+            {error && <p className="authform__error"> { error } </p>}
             <strong>Email : </strong> <span>{currentUser.email}</span>
-            <p><Link to="/" className="button">Go to Dasahboard</Link></p>
-            <p><Link to="/update-profile" className="button">Update Profile</Link></p>
-            <button onClick={handleLogout} >Logout</button>
+            <p className="authform__direct"><Link to="/" className="button">Go to Dasahboard</Link></p>
+            <p className="authform__direct"><Link to="/update-profile" className="button">Update Profile</Link></p>
+            <button onClick={handleLogout} className="authform__btn">Logout</button>
         </div>
     )
 }
