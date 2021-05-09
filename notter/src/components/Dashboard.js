@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import Navbar from './Navbar';
+import NotesContainer from './NotesContainer';
 
 function Dashboard() {
     const [error, setError] = useState('');
@@ -18,12 +20,12 @@ function Dashboard() {
     }
 
     return (
-        <div className="Dashboard">
-            <h2>Dashboard</h2>
-            {error && <p> { error } </p>}
-            <strong>Email : </strong> <span>{currentUser.email}</span>
-            <p><Link to="/profile" className="button">Got to Profile</Link></p>
-            <button onClick={handleLogout} >Logout</button>
+        <div className="dashboard">
+            <Navbar handleLogout={handleLogout} error={error} />
+            <button className="new-note" id="new-note-btn">
+                <i className='bx bx-plus bx-md' ></i>
+            </button>
+            <NotesContainer />
         </div>
     )
 }

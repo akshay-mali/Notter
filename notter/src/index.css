@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 *{
   box-sizing: border-box;
+}
+
+:root{
+  --title-font-size : 14px;
+  --para-font-size : 11px;
 }
 
 body {
@@ -9,7 +14,12 @@ body {
   padding: 0;
   height: 100vh;
   width: 100%;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #FAFAFF;
+}
+
+h1,h2,h3,p{
+  margin: 0;
 }
 
 #root{
@@ -20,13 +30,17 @@ body {
   justify-content: center;
 }
 
+.dashboard{
+  height: 100vh;
+  width: 100%;
+}
+
+/* Authentication pages styles */
 .authform__container {
-  /* background-color: #69f; */
   padding: 24px 40px;
   width: 80%;
   max-width: 400px;
 }
-
 .authform__title {
   text-align: center;
 }
@@ -87,4 +101,209 @@ body {
   text-align: center;
   color: #f3266a;
   font-weight: 600;
+}
+
+/* Navbar */
+.header{
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+.nav{
+  height: 80px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.header__title{
+  font-size: 24px;
+  font-weight: 500;
+  color: #141414;
+}
+.nav-right{
+  display: flex;
+  align-items: center;
+}
+.search-box{
+  display: none;
+  align-items: center;
+  margin-right: 32px;
+}
+.search-box i{
+  color: #BBB;
+}
+.search-box input{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding-left: 6px;
+  width: 240px;
+}
+.search-box input::-webkit-input-placeholder,
+.search-box input::placeholder
+{ 
+  color: #BBBBBB;
+  font-weight: 400;
+}
+.logoutBtn{
+  font-weight: 600;
+  padding: 0.75em 1.5em;
+  border: none;
+  background-color: #2663f3;
+  color: #fff;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+/* Main Container */
+.container{
+  margin: 0px auto;
+  padding: 50px 0;
+  width: 80%;
+  columns: 1;
+  column-width: 240px;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+/* Card Styles */
+.card{
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 2px 24px -2px rgba(4, 33, 87, 0.12);
+  border-radius: 24px;
+  display: block;
+  break-inside: avoid;
+  margin: 0;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.card__image{
+  width: 100%;
+  background-color: #6c6edd;
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
+}
+.card__image .img{
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card__text{
+  padding: 12px 18px;
+}
+.card__title{
+  font-size: var(--title-font-size);
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 4px;
+}
+.card__paragraph{
+  font-size: var(--para-font-size);
+  color: #888888;
+}
+.card__checklist{
+  list-style: none;
+  margin: 0;
+  padding: 12px 18px 12px;
+}
+.card__checklist-item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.card__checklist-item span{
+  font-size: var(--para-font-size);
+  color: #636363;
+  margin-left: 4px;
+}
+
+.card__checklist-item.completed span{
+  color: #888888;
+  text-decoration: line-through;
+}
+
+/* New Note Button */
+.new-note{
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 100%;
+  background-color: #141414;
+  position: fixed;
+  bottom: 72px;
+  right: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 24px -2px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+.new-note i {
+  color: #fff;
+}
+
+
+@media screen and (min-width : 600px){
+  .nav{
+      width: 90%;
+  }
+  .container{
+      width: 90%;
+      columns: 2;
+  }
+  .search-box{
+    display: flex;
+  }
+}
+
+@media screen and (min-width : 800px){
+  .nav{
+      width: 80%;
+  }
+  .container{
+      width: 80%;
+      columns: 2;
+      column-width: 300px;
+      column-gap: 24px;
+      row-gap: 24px;
+  }
+}
+
+@media screen and (min-width : 1000px){
+  .nav{
+      width: 90%;
+  }
+  .container{
+      width: 90%;
+      columns: 3;
+  }
+}
+
+@media screen and (min-width : 1200px){
+  :root {
+      --title-font-size : 16px;
+      --para-font-size : 13px;
+  }
+  .nav{
+      width: 86%;
+  }
+  .container{
+      width: 86%;
+      columns: 3;
+  }
+}
+
+
+@media screen and (min-width : 1440px){
+  .nav{
+      width: 1400px;
+  }
+  .container{
+      width: 1300px;
+      columns: 4;
+  }
 }
