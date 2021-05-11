@@ -6,7 +6,7 @@ function Note({ note, index }) {
             {note.imageURL && <div className="card__image">
                 {note.imageURL && <img src={note.imageURL} alt="" className="img" />}
             </div>}
-            {(note.title || note.paragraph) && <div className="card__text" style={{borderBottom: '1px solid #ECECEC'}}>
+            {(note.title || note.paragraph) && <div className="card__text" style={{borderBottom: note.list.length!==0? '1px solid #ECECEC' : ''}}>
                 <h3 className="card__title">{note.title}</h3>
                 <p className="card__paragraph">
                     {note.paragraph}
