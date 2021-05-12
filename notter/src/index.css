@@ -203,8 +203,22 @@ h1,h2,h3,p{
 .list-item__title{
   flex-grow: 1;
 }
-.add-list-btn{
+.list-form{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 16px 0 8px;
+}
+.list-input{
+  flex-grow: 1;
+  border: none;
+  background-color: #ececec;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+.add-list-btn{
+  margin-left: 8px;
   padding: 0.5rem 0.75rem;
   border: none;
   background-color: var(--modal-color);
@@ -222,6 +236,13 @@ h1,h2,h3,p{
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+/* progress bar styles */
+.progress-bar{
+  height: 5px;
+  background: var(--modal-color);
+  margin-top: 20px;
 }
 
 
