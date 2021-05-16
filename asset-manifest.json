@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/Notter/static/css/main.cde10417.chunk.css",
-    "main.js": "/Notter/static/js/main.fb3cd2a3.chunk.js",
-    "main.js.map": "/Notter/static/js/main.fb3cd2a3.chunk.js.map",
+    "main.js": "/Notter/static/js/main.a24eb6bd.chunk.js",
+    "main.js.map": "/Notter/static/js/main.a24eb6bd.chunk.js.map",
     "runtime-main.js": "/Notter/static/js/runtime-main.71da2c44.js",
     "runtime-main.js.map": "/Notter/static/js/runtime-main.71da2c44.js.map",
-    "static/js/2.f2b9c010.chunk.js": "/Notter/static/js/2.f2b9c010.chunk.js",
-    "static/js/2.f2b9c010.chunk.js.map": "/Notter/static/js/2.f2b9c010.chunk.js.map",
+    "static/js/2.4c3a17a3.chunk.js": "/Notter/static/js/2.4c3a17a3.chunk.js",
+    "static/js/2.4c3a17a3.chunk.js.map": "/Notter/static/js/2.4c3a17a3.chunk.js.map",
     "index.html": "/Notter/index.html",
     "static/css/main.cde10417.chunk.css.map": "/Notter/static/css/main.cde10417.chunk.css.map",
-    "static/js/2.f2b9c010.chunk.js.LICENSE.txt": "/Notter/static/js/2.f2b9c010.chunk.js.LICENSE.txt"
+    "static/js/2.4c3a17a3.chunk.js.LICENSE.txt": "/Notter/static/js/2.4c3a17a3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.71da2c44.js",
-    "static/js/2.f2b9c010.chunk.js",
+    "static/js/2.4c3a17a3.chunk.js",
     "static/css/main.cde10417.chunk.css",
-    "static/js/main.fb3cd2a3.chunk.js"
+    "static/js/main.a24eb6bd.chunk.js"
   ]
 }
