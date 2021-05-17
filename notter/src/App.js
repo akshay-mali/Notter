@@ -1,6 +1,6 @@
 import Signup from "./components/authentication/Signup";
 import { AuthProvider } from "./contexts/AuthContext";
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'; 
+import {HashRouter as Router, Switch, Route} from 'react-router-dom'; 
 import Profile from './components/authentication/Profile';
 import Login from "./components/authentication/Login";
 import PrivateRoute from "./components/authentication/PrivateRoute";

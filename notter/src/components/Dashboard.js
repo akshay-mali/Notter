@@ -11,6 +11,7 @@ function Dashboard() {
     const history = useHistory();
 
     const [showModal, setShowModal] = useState(false);
+    const [modalData, setModalData] = useState(null)
 
     const handleLogout = async () => {
         setError('');
@@ -24,16 +25,22 @@ function Dashboard() {
 
     const handleNewNoteOnClick = () => {
         setShowModal(true);
+        setModalData(null);
+    }
+
+    const handleEditNoteOnClick = (note) => {
+        setShowModal(true);
+        setModalData(note);
     }
 
     return (
         <div className="dashboard">
-            <Navbar handleLogout={handleLogout} error={error} />
+            <Navbar handleLogout={handleLogout} error={error} currentUser={currentUser} />
             <button className="new-note" id="new-note-btn" onClick={handleNewNoteOnClick}>
                 <i className='bx bx-plus bx-md' ></i>
             </button>
-            <Modal showModal={showModal} setShowModal={setShowModal} />
-            <NotesContainer />
+            {showModal && <Modal showModal={showModal} setShowModal={setShowModal} modalData={modalData} />}
+            <NotesContainer handleEditNoteOnClick={handleEditNoteOnClick} />
         </div>
     )
 }

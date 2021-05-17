@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { projectFirestore } from '../firebase';
 
 const useFirestore = (collection) => {
-  const [docs, setDocs] = useState([]);
+  const [notes, setNotes] = useState([]);
 
   useEffect(() => {
     const unsub = projectFirestore.collection(collection)
@@ -12,13 +12,13 @@ const useFirestore = (collection) => {
         snap.forEach(doc => {
           documents.push({...doc.data(), id: doc.id});
         });
-        setDocs(documents);
+        setNotes(documents);
       });
 
     return () => unsub();
   }, [collection]);
 
-  return { docs };
+  return { notes };
 }
 
 export default useFirestore;
